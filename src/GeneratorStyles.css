@@ -1,0 +1,25 @@
+.box-head{
+    font-weight: bolder;
+    text-align: center;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #3B4252;
+    padding: 0 0.5em;
+    margin: 0em;
+    flex-shrink: 1;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    border: #3B4252 solid 1px;
+    margin: .5em;
+    padding: 0em;
+}
+.box-content{
+    padding: 0.5em;
+}
+.boxes-wrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    grid-auto-rows: minmax(100px, auto);
+}

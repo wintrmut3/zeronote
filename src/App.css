@@ -1,38 +1,138 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    font-family: 'Space Mono', monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+    padding: 0 1em;
+    flex-shrink: 0;
+    background-color: #2E3440;
+    color: #E5E9F0;
+    text-align: center;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.body {
+    flex-grow: 1;
+    overflow: scroll;
+    height: 100%;
+    padding: 1em;
+    color: #E5E9F0;
+    background-color: #21252c;
+    /* IE and Edge */
+    white-space: pre-wrap;
+    border: 0px ;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    outline:none;
+    resize: none; /*remove the resize handle on the bottom right*/
+    font-family: inherit;
+}
+.viewer{
+    flex: none;
+    /* flex-grow: 1; */
+    overflow: scroll;
+    height: 100%;
+    padding: 1em;
+    color: #3B4252;
+    background-color: #E5E9F0;
+    border: 0px ;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+/* Hide scrollbars */
+
+.body::-webkit-scrollbar {
+    display: none;
 }
 
-.App-link {
-  color: #61dafb;
+footer {
+    flex-shrink: 0;
+    background-color: #2E3440;
+    color: #D8DEE9;
+    display: flex;
+    flex-direction: row;
+}
+.footer-text{
+    padding: 0 0em 0 1em;
+    flex-grow: 1;
+}
+.footer-button-container{
+    margin: 0;
+    display: flex;
+    flex-direction: row;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bg-red{
+    background-color: #BF616A;
+
 }
+.bg-orange{
+    background-color: #D08770;
+}
+/*
+.bg-green{
+    background-color: #A3BE8C;
+    color: black;
+}
+.bg-blue{
+    background-color: #5E81AC;
+}
+.bg-bluegreen{
+    background-color: #8FBCBB;
+    color: black;
+} */
+.bg-bl1{
+    background-color: #daf8e3;
+    color: #21252c;
+}
+.bg-bl2{
+    background-color: #97ebdb;
+    color: #21252c;
+
+}
+
+.bg-bl3{
+    background-color: #00c2c7;
+    color: #21252c;
+
+}
+
+.bg-bl4{
+    background-color: #0086ad;
+}
+
+.bg-bl5{
+    background-color: #005582;
+}
+
+
+
+.footer-button{
+    align-self: flex-end;
+    padding: 0 1em;
+
+}
+.footer-button:hover{
+    background-color: #EBCB8B;
+    color: black;
+    cursor: crosshair;
+}
+
+#editor{
+    padding: 4em 20vw;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
