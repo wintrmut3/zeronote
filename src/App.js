@@ -225,7 +225,7 @@ function App() {
                 />
 
                 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&family=Space+Mono&family=Syne&display=swap" rel="stylesheet" />
-                <title>astronote(v.01)</title>
+                <title>zeronote (v.02)</title>
             </Helmet>
 
             <div className="container">
