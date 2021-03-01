@@ -9,6 +9,11 @@ export default function Box(props) {
     // [text](url)
     const link = /\[(.*?)\]\((.*?)\)/;
 
+    //custom detector strings
+    const remark = /^!rmk.*$/;
+    const definition = /^!def.*$/;
+    const tip = /^!tip.*$/;
+    const important = /^!imp.*$/;
 
     var PackagedContent = [];
 
@@ -20,6 +25,26 @@ export default function Box(props) {
                     <LatexRenderer data={latexBlock.exec(line)[0]} />
                 </div>
             );
+        }
+        else if (line.match(remark)) {
+            PackagedContent.push(
+                <p className="box-remark">{remark.exec(line)[0].substring(4)}</p> //exec [0] grabs the whole captured string
+            )
+        }
+        else if (line.match(definition)) {
+            PackagedContent.push(
+                <p className="box-definition">{definition.exec(line)[0].substring(4)}</p> //exec [0] grabs the whole captured string
+            )
+        }
+        else if (line.match(tip)) {
+            PackagedContent.push(
+                <p className="box-tip">{tip.exec(line)[0].substring(4)}</p> //exec [0] grabs the whole captured string
+            )
+        }
+        else if (line.match(important)) {
+            PackagedContent.push(
+                <p className="box-important">{important.exec(line)[0].substring(4)}</p> //exec [0] grabs the whole captured string
+            )
         }
         else if (line.match(bold)) {
             PackagedContent.push(

@@ -6,7 +6,7 @@ import Box from './Box';
 import html2canvas from 'html2canvas';
 import ls from 'local-storage'
 import Download from '@axetroy/react-download';
-import { Page, Text, View, Document, StyleSheet, PDFDownloadLink } from '@react-pdf/renderer';
+// import { Page, Text, View, Document, StyleSheet, PDFDownloadLink } from '@react-pdf/renderer';
 
 
 //box data template
@@ -111,20 +111,25 @@ function App() {
     }//end box data packer function
 
     //opens image in new tab - can't do this with the simple window.open anymore due to chrome deprec so use iframe instead
-    // const RenderImage = () => {
+    const RenderImage = () => {
+        const div = document.getElementById("boxes-wrapper");
 
-    //     if (document.querySelector("#export-target")) {
-    //         html2canvas(document.querySelector("#export-target")).then(function (canvas) {
-    //             const base64image = canvas.toDataURL("png");
-    //             // var iframe = "<iframe width='100%' height='100%' src='" + base64image + "'></iframe>"
-    //             var data = document.getElementById("export-target").outerHTML;
-    //             var x = window.open();
-    //             x.document.open();
-    //             x.document.write(data);
-    //             x.document.close();
-    //         });
-    //     }
-    // }
+        html2canvas(div,  {
+            windowWidth: div.scrollWidth,
+            windowHeight: div.scrollHeight
+        }).then(function (canvas) {
+            // const base64image = canvas.toDataURL("png");
+            // var iframe = "<iframe width='100%' height='100%' src='" + base64image + "'></iframe>"
+            // var data = div.outerHTML;
+            // var x = window.open();
+            // x.document.open();
+            // x.document.write(iframe);
+            // x.document.close();
+            document
+                .appendChild(canvas);
+        });
+
+    }
 
     const RenderTab = () => {
         var wi = window.open('', 'printwindow');
@@ -242,13 +247,13 @@ function App() {
                 {!showOutput &&
                     <footer>
                         <div className="footer-text">
-                            nocturnote v0.1 - export preview
+                            zeronote v0.2
                     </div>
                         <div className="footer-button bg-bl2" onClick={ChangeCols}>
                             <p>++cols[{(numCols - 1) % 7 + 1}]</p>
                         </div>
 
-                        <div className="footer-button bg-bl3" onClick={RenderTab}>
+                        <div className="footer-button bg-bl3" onClick={RenderImage}>
                             export
                             </div>
                         <div className="footer-button bg-bl4" onClick={FlipShowOutput}>
@@ -262,7 +267,7 @@ function App() {
                 {showOutput &&
                     <footer>
                         <div className="footer-text">
-                            nocturnote v0.1 - editor
+                            zeronote v0.2
                     </div>
                         <div className="footer-button bg-bl1" onClick={RenderReadMe}>
                             <p>readme</p>

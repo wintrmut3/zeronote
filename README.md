@@ -29,3 +29,11 @@ I'm still working on rendering to PDF, but:
   - Scaling to custom - something smaller if there's no clipping
   - Enable "Background Graphics" for coloured headers
   - Use paper size > letter
+
+### Ideas for Improvement
+* Highlighting (eg. colors for RMK, DEF)
+* Intra-line bold, italic, equation processing using regex replace instead of match
+* Collapsible Outliner
+* Savable data URLs (eg. can export text data as URL, will be updated live)
+* Image resizing
+* Paste image into note

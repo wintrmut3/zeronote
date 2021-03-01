@@ -23,3 +23,27 @@
     grid-template-columns: repeat(4, 2fr);
     grid-auto-rows: minmax(100px, auto);
 }
+.box-remark{
+    background-color: 	#FD971F;
+    text-align: center;
+    padding: 1em;
+    margin: 0.5em 1em;
+}
+.box-definition{
+    background-color: 	#A6E22E;
+    padding: 1em;
+    margin: 0.5em 1em;
+}
+.box-important{
+    background-color: 	#F92672;
+    /* box-shadow: #3B4252aa 4px 4px; */
+    padding: 1em;
+    margin: 0.5em 1em;
+    color: white;
+}
+.box-tip{
+    background-color: 	#66D9EF;
+    padding: 1em;
+    margin: 0.5em 1em;
+}
+
