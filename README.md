@@ -3,6 +3,8 @@ Zeronote is a compact study sheet generator.
 
 It uses a markdown-like syntax to create and fill note "boxes". The syntax is augmented with a few special features that are useful for study notes.
 
+**WARNING: EXPORT BUTTON IS CURRENTLY BROKEN, I RECOMMEND USING A FULL PAGE SCREENSHOT EXTENSION TO GRAB THE FINAL RESULT**
+
 ## Features
 - Headings
 - Bold, Italicized formatting
@@ -63,6 +65,7 @@ remark (rmk) tag:
 *Fig 2: Viewer interface.*
 
 ### Exporting
+**THIS IS CURRENTLY BROKEN, I RECOMMEND A FULL PAGE SCREENSHOT APP UNTIL I CAN FIX IT**
 I'm still working on rendering to PDF, but:
 - The export just opens the preview div in its own window
 - Chrome's print option to set up:
